@@ -1,0 +1,38 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: secure-api-kk
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/oauth-kk
+jwt:
+  auth:
+    converter:
+      resource-id: oauth-kk-client
+      principal-attribute: preferred_username
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        web: DEBUG
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
