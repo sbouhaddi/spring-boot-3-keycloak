@@ -1,22 +1,11 @@
-# server:
-#   port: 8081
-#   servlet:
-#       context-path: /api
-# spring:
-#   application:
-#     name: oauth-kk
-#   security:
-#     oauth2:
-#       resourceserver:
-#         jwt:
-#           issuer-uri: http://localhost:8080/realms/oauth-kk
-#           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
-# jwt:
-#   auth:
-#     converter:
-#       resource-id: oauth-kk-client
-#       principal-attribute: preferred_username
-
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    client-id: oauth-kk-client
+    groups-order: DESC
+    use-root-path: true
+    default-models-expand-depth: -1
+    version: '@springdoc-openapi-starter-webmvc-ui.version@'
 logging:
   level:
     org:

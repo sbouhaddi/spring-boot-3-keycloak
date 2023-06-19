@@ -21,7 +21,7 @@ public class TestController {
     @PreAuthorize("hasAuthority('admin')")
     public ResponseEntity<String> getAdmin(Authentication principal) {
         String userName = principal.getName();
-        return ResponseEntity.ok("Hello User \nUser Name : " + userName);
+        return ResponseEntity.ok("Hello Admin \nUser Name : " + userName);
     }
 
     @GetMapping("/user")
